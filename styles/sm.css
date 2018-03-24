@@ -1,0 +1,26 @@
+@media screen
+  and (min-width: 24em)
+  and (max-width: 48em) {
+  :root {
+    --h1-size: 5.96rem;
+    --h2-size: 1.953rem;
+    --p-size: 1rem;
+  }
+
+  .article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(5, auto);
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .p {
+    max-width: 31rem;
+  }
+}

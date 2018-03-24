@@ -1,0 +1,15 @@
+@media screen and (max-width: 24em) {
+  :root {
+    --h1-size: 4.768rem;
+    --h2-size: 1.563rem;
+    --p-size: 1rem;
+  }
+
+  .body {
+    padding: 0 var(--space-1) 0 var(--space-2);
+  }
+
+  .h2 {
+    font-weight: 200;
+  }
+}
