@@ -74,17 +74,22 @@
   </script>
   <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
   <script>
-    function shootLines() {
-      const itemDim = this.getBoundingClientRect(),
-            itemSize = {
-              x: itemDim.right - itemDim.left,
-              y: itemDim.bottom - itemDim.top,
-            };
+    if ('mojs' in window) {
+      function shootLines(itemDim, itemSize) {
+        burst
+          .tune({
+            x: itemDim.left + (itemSize.x / 2),
+            y: itemDim.top + (itemSize.y / 2),
+            radiusX: itemSize.x,
+            radiusY: itemSize.y,
+          })
+          .replay();
+      }
       const burst = new mojs.Burst({
-        left: itemDim.left + (itemSize.x / 2),
-        top: itemDim.top + (itemSize.y / 2),
-        radiusX: itemSize.x,
-        radiusY: itemSize.y,
+        left: 0,
+        top: 0,
+        radiusX: 1,
+        radiusY: 5,
         count: 6,
         children: {
           shape: 'line',
@@ -101,11 +106,15 @@
           isShowEnd: false,
         }
       });
-      burst.play();
-    }
-    if ('mojs' in window) {
       const links = document.querySelectorAll('.js-a');
-      links.forEach(link => link.addEventListener('mouseenter', shootLines));
+      links.forEach(link => link.addEventListener('mouseenter', function() {
+        const itemDim = this.getBoundingClientRect(),
+              itemSize = {
+                x: itemDim.right - itemDim.left,
+                y: itemDim.bottom - itemDim.top,
+              };
+        shootLines(itemDim, itemSize);
+      }));
     }
   </script>
 </body>
