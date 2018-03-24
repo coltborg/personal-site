@@ -94,10 +94,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .h1 {
-  font-family: 'Bajern',
-                georgia,
-                times,
-                serif;
+  font-family: 'Bajern', georgia, times, serif;
   font-size: var(--h1-size);
   line-height: var(--lh-title);
   margin-top: var(--space-1);
@@ -120,7 +117,7 @@ footer, header, hgroup, menu, nav, section {
   color: var(--blue);
   position: relative;
   text-decoration: none;
-  border-bottom: 2px solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .a:after {

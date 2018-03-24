@@ -1,6 +1,7 @@
 @media screen
   and (min-width: 24em)
   and (max-width: 48em) {
+
   :root {
     --h1-size: 5.96rem;
     --h2-size: 1.953rem;
@@ -23,4 +24,5 @@
   .p {
     max-width: 31rem;
   }
+
 }

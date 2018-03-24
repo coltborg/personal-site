@@ -1,4 +1,5 @@
 @media screen and (min-width: 64em) {
+
   :root {
     --h1-size: 9.313rem;
     --h2-size: 2.441rem;
@@ -48,4 +49,5 @@
   .credit-separator {
     display: block;
   }
+
 }

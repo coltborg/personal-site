@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <!-- HTML Meta Tags -->
   <title> Colt Borg | Design/Developer</title>
   <meta name="description" content="I make clean & usable designs with web technology.">
+
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -15,21 +18,25 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3131fc">
   <meta name="msapplication-TileColor" content="#3131fc">
   <meta name="theme-color" content="#f5f5f5">
+
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content=" Colt Borg | Design/Developer">
   <meta itemprop="description" content="I make clean & usable designs with web technology.">
   <meta itemprop="image" content="https://coltborg.com/colt-borg-share.png">
+
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://coltborg.com">
   <meta property="og:type" content="website">
   <meta property="og:title" content=" Colt Borg | Design/Developer">
   <meta property="og:description" content="I make clean & usable designs with web technology.">
   <meta property="og:image" content="https://coltborg.com/colt-borg-share.png">
+
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content=" Colt Borg | Design/Developer">
   <meta name="twitter:description" content="I make clean & usable designs with web technology.">
   <meta name="twitter:image" content="https://coltborg.com/colt-borg-share.png">
+
   <!-- Google Analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,6 +47,7 @@
     ga('create', 'UA-61657533-2', 'auto');
     ga('send', 'pageview');
   </script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/xs.css" media="(max-width: 24em)">
@@ -48,7 +56,9 @@
   <link rel="stylesheet" href="styles/lg.css" media="(min-width: 64em)">
   <link rel="stylesheet" href="styles/xl.css" media="(min-width: 80em)">
 </head>
+
 <body class="body">
+
   <main class="main">
     <article class="article">
       <header class="header">
@@ -66,6 +76,7 @@
       </div>
     </article>
   </main>
+
   <div class="credit">
     <div class="credit-item">&COPY; Copyright <span class="js-year">2018</span></div>
     <div class="credit-item credit-separator">|</div>
@@ -73,23 +84,30 @@
       <a class="a" href="https://www.behance.net/gallery/35833173/Bajern-A-Free-Typeface" target="_blank" rel="noopener">Bajern</a> typeface designed by <a class="a" href="http://www.antonbolin.se/" target="_blank" rel="noopener">Anton Bolin</a>
     </div>
   </div>
+
   <script>
     const yearEl = document.querySelector('.js-year');
     yearEl.innerHTML = new Date().getFullYear();
   </script>
   <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
   <script>
+
     if ('mojs' in window) {
+
       function shootLines(itemDim, itemSize) {
         burst
+          // Change position so that one animation can be recycled
           .tune({
             x: itemDim.left + (itemSize.x / 2),
             y: itemDim.top + (itemSize.y / 2),
             radiusX: itemSize.x,
             radiusY: itemSize.y,
           })
+          // Play animation
           .replay();
       }
+
+      // Create animation object
       const burst = new mojs.Burst({
         left: 0,
         top: 0,
@@ -111,16 +129,27 @@
           isShowEnd: false,
         }
       });
+
       const links = document.querySelectorAll('.js-a');
+
       links.forEach(link => link.addEventListener('mouseenter', function() {
+
+        // Get sizing for each item
         const itemDim = this.getBoundingClientRect(),
               itemSize = {
                 x: itemDim.right - itemDim.left,
                 y: itemDim.bottom - itemDim.top,
               };
+
+        // Trigger animation
         shootLines(itemDim, itemSize);
+
       }));
+
     }
+
   </script>
+
 </body>
+
 </html>

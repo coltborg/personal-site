@@ -1,6 +1,7 @@
 @media screen
   and (min-width: 48em)
   and (max-width: 64em) {
+
   :root {
     --h1-size: 7.451rem;
     --h2-size: 1.953rem;
@@ -51,12 +52,15 @@
   .area-copy {
     grid-area: copy;
   }
+
 }
 
 @media screen
   and (min-width: 48em)
   and (max-width: 53em) {
+
   :root {
     --h1-size: 5.96rem;
   }
+
 }
