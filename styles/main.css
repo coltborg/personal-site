@@ -1,0 +1,382 @@
+:root {
+  --black: #333333;
+  --gray:  #666666;
+  --white: #ffffff;
+  --blue:  #3131fc;
+  --lh-title: 1.25;
+  --lh-copy: 1.4;
+  --h1-size: 11.642rem;
+  --h2-size: 2.441rem;
+  --p-size: 1.563rem;
+  --space-0: 0;
+  --space-1: calc((var(--lh-copy) * 1rem) / 2);
+  --space-2: calc(var(--lh-copy) * 1rem);
+  --space-3: calc((var(--lh-copy) * 1rem) * 2);
+  --space-4: calc((var(--lh-copy) * 1rem) * 3);
+}
+
+@font-face {
+  font-family: 'Bajern';
+  src: url('../fonts/Bajern.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+::-moz-selection {
+  background-color: var(--blue);
+  color: var(--white);
+  text-shadow: 1px 2px 1px var(--gray);
+}
+
+::selection {
+  background-color: var(--blue);
+  color: var(--white);
+  text-shadow: 1px 2px 1px var(--gray);
+}
+
+/* TODO: remove when removing the media ribbon */
+html {
+  overflow-x: hidden;
+}
+
+.body {
+  padding: 0 var(--space-2) 0 var(--space-1);
+  text-rendering: optimizeLegibility;
+  font-family: 'helvetica neue',
+                helvetica,
+                sans-serif;
+}
+
+.body:before {
+  -webkit-font-smoothing: initial;
+  background-color: #ccc;
+  color: rgba(255,255,255,0);
+  content: "\00a0";
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  right: -3.1rem;
+  text-align: center;
+  top: -1.2rem;
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+  width: 6rem;
+  z-index: 10;
+  transition:
+    background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+    color 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+}
+
+.main {}
+
+.article {}
+
+.header {
+  margin-bottom: var(--space-3);
+}
+
+.footer {
+  margin-bottom: var(--space-4);
+}
+
+.h1 {
+  font-family: 'Bajern',
+                georgia,
+                times,
+                serif;
+  font-size: var(--h1-size);
+  line-height: var(--lh-title);
+  margin-top: var(--space-1);
+}
+
+.h2 {
+  font-size: var(--h2-size);
+  font-weight: 100;
+  line-height: var(--lh-title);
+}
+
+.p {
+  font-size: var(--p-size);
+  line-height: var(--lh-copy);
+  margin-bottom: var(--space-2);
+  color: var(--gray);
+}
+
+.a {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* TODO: add hover */
+.a:hover {}
+
+.a:visited {
+  text-decoration: line-through;
+}
+
+.credit {
+  font-size: 0.512rem;
+  margin-bottom: calc(var(--space-1) / 2);
+}
+
+.credit > .credit-item {
+  margin-right: 0;
+}
+
+.credit-separator {
+  display: none;
+}
+
+@media screen and (max-width: 24em) {
+  :root {
+    --h1-size: 4.768rem;
+    --h2-size: 1.563rem;
+    --p-size: 1rem;
+  }
+
+  .body {
+    padding: 0 var(--space-1) 0 var(--space-2);
+  }
+
+  .body:before {
+    background-color: #40bf80;
+    color: #fff;
+    content: "XS";
+  }
+
+  .h2 {
+    font-weight: 200;
+  }
+}
+
+@media screen
+  and (min-width: 24em)
+  and (max-width: 48em) {
+  :root {
+    --h1-size: 5.96rem;
+    --h2-size: 1.953rem;
+    --p-size: 1rem;
+  }
+
+  .body:before {
+    background-color: #33b2cc;
+    color: #fff;
+    content: "SM";
+  }
+
+  .article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(5, auto);
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .p {
+    max-width: 31rem;
+  }
+}
+
+@media screen
+  and (min-width: 48em)
+  and (max-width: 64em) {
+  :root {
+    --h1-size: 7.451rem;
+    --h2-size: 1.953rem;
+    --p-size: 1.25rem;
+  }
+
+  .body {
+    padding: 0 var(--space-1);
+  }
+
+  .body:before {
+    background-color: #bc79ec;
+    color: #fff;
+    content: "MD";
+  }
+
+  .article {
+    display: grid;
+    grid-column-gap: var(--space-2);
+    grid-auto-flow: column;
+    grid-template-columns:
+      1fr [copy-start] 1fr [header-start] 1fr 1fr 1fr [header-end copy-end] 1fr 1fr;
+    grid-template-rows:
+      [header-start] auto [header-end copy-start copy-1] auto [copy-2] auto [copy-3] auto
+      [copy-4] auto [copy-5] auto [copy-end copy-6];
+    grid-template-areas:  "...... ...... header header header ...... ......"
+                          "...... copy   copy   copy   copy   ...... ......"
+                          "...... copy   copy   copy   copy   ...... ......"
+                          "...... copy   copy   copy   copy   ...... ......"
+                          "...... copy   copy   copy   copy   ...... ......"
+                          "...... copy   copy   copy   copy   ...... ......";
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h1 {
+    flex: 1 0 auto;
+  }
+
+  .h2 {
+    flex: 1 0 auto;
+  }
+
+  .p {
+    max-width: 31rem;
+  }
+
+  .area-copy {
+    grid-area: copy;
+  }
+
+  .credit {
+    position: fixed;
+    bottom: var(--space-1);
+    right: var(--space-1);
+    font-size: 0.64rem;
+    margin-bottom: 0;
+    display: flex;
+  }
+
+  .credit > .credit-item {
+    margin-right: var(--space-1);
+  }
+
+  .credit-separator {
+    display: block;
+  }
+}
+
+@media screen
+  and (min-width: 48em)
+  and (max-width: 53em) {
+  :root {
+    --h1-size: 5.96rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  :root {
+    --h1-size: 9.313rem;
+    --h2-size: 2.441rem;
+    --p-size: 1.25rem;
+  }
+
+  .body:before {
+    background-color: #f0427c;
+    color: #fff;
+    content: "LG";
+  }
+
+  .article {
+    min-height: 100vh;
+    align-items: center;
+    display: grid;
+    margin: 0 var(--space-3);
+    grid-column-gap: var(--space-3);
+    grid-template-columns:
+      [header-start] 1fr [header-end copy-start] 1fr [copy-end];
+    grid-template-rows: 1fr;
+    grid-template-areas:  "header copy";
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .p {
+    max-width: 50rem;
+  }
+
+  .area-copy {
+    grid-area: copy;
+  }
+
+  .credit {
+    position: fixed;
+    bottom: var(--space-1);
+    right: var(--space-1);
+    font-size: 0.64rem;
+    margin-bottom: 0;
+    display: flex;
+  }
+
+  .credit > .credit-item {
+    margin-right: var(--space-1);
+  }
+
+  .credit-separator {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  :root {
+    --h1-size: 11.642rem;
+  }
+
+  .body:before {
+    background-color: aquamarine;
+    color: #fff;
+    content: "XL";
+  }
+}
