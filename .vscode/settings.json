@@ -2,5 +2,10 @@
   "cSpell.words": [
     "cortado",
     "liga"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#ffffff",
+    "statusBar.foreground": "#333333",
+    "statusBarItem.hoverBackground": "#3131fc9c",
+  },
 }
