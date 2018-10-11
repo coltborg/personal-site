@@ -8,4 +8,5 @@
     "statusBar.foreground": "#333333",
     "statusBarItem.hoverBackground": "#3131fc9c",
   },
+  "html.format.enable": false,
 }
