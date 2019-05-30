@@ -1,3 +1,5 @@
+![depricated badge](https://img.shields.io/badge/Depricated-No%20longer%20using-red.svg)
+
 # Personal site 👨🏻‍💻
 
 This is a small repo for [coltborg.com](https://coltborg.com). Nothing fancy.
